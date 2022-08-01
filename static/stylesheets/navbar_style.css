@@ -1,0 +1,103 @@
+.dropdown{
+    padding: 0px 10px;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+.text-center{
+    font-family: 'IM Fell English SC', serif;
+    font-size: 1.4em;
+    color: white;
+    text-align: center;
+}
+
+#logoutbtn{
+    color: red;
+}
+
+#logoutbtn:active {
+  background-color: white;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#newmarkdownlink:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#dashboardlink:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+/* The Modal (background) */
+.cheatsheetmodal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.cheatsheetmodal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.cheatsheetmodalclose {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.cheatsheetmodalclose:hover,
+.cheatsheetmodalclose:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.modal-left{
+    width: 100%;
+    height: 70%;
+}
+
+.modal-right{
+    width: 100%;
+    height: 70%;
+}
