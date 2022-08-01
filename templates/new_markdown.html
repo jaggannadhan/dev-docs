@@ -1,0 +1,49 @@
+{% extends '_default_layout.html' %}
+
+    {% block body %}
+        <title>{{user_name}}'s New MarkDown</title>
+        {% if session_exists %}
+            <link rel="stylesheet" href="/static/stylesheets/dashboard_style.css?v=1.14">
+             {% include '/_navbar.html' %}<br><br><br><br>
+               <div class="row container">
+                    <div class="col-md-5 leftcol">
+                            <div class="markdowninput">
+                                <label for="markdowntxt" style="background: white; width: 100%; text-align: center;"><h3>Enter The MarkDown Text Here: </h3></label><br>
+                                <input type="text" id="newmarkdowndesc" placeholder="Enter Description" required autofocus>
+                                <textarea id="markdowntxt" name="markdowntxt" value="{{request.form.markdowntxt}}"
+                                          placeholder="Paste your MarkDown Here!" required autofocus></textarea><br><br>
+                                <button id="previewhtml" type="button" class="btn-primary"
+                                        onclick="new_markdown_validate('{{url_for('new_markdown', user_id=user_id)}}', 'true')">PREVIEW HTML</button>
+                                <button id="htmlconversion" type="button" class="btn-primary"
+                                         onclick="new_markdown_validate('{{url_for('new_markdown', user_id=user_id)}}', 'false')">CONVERT & POST</button>
+                            </div>
+                    </div>
+
+                    <div class="col-md-6 middlecolnew">
+                        <span id="Mostrecent" style="font-family: 'Pacifico', cursive;  font-size:1.4em;">MarkUp View</span>
+                        <button id="viewbtn" class="btn btn-primary" style="float: right; display: none;" onclick="change_View()">VIEW ESCAPED HTML</button>
+                        <br><hr style="background:black; clear:both;">
+                        <div id="middlecolcontentdiv"></div>
+                        <textarea id="middlecolcontenttext"></textarea>
+                    </div>
+
+               </div>
+        {% else %}
+            <style>
+                body{
+                    background-image: url('https://images2.alphacoders.com/708/thumb-1920-708647.jpg');
+                }
+                .session-expired{
+                    padding:40px;
+                    background: black;
+                    opacity: .5;
+                    color: white;
+                }
+            </style>
+                <div class = "session-expired container">
+                    <h3>Oops! Your session has expired! You have to log in</h3>
+                    <a href="{{ url_for('login') }}">Log-In again!</a>
+                </div>
+        {% endif %}
+        <script type="text/javascript" src="/static/scripts/main_script.js"></script>
+    {% endblock %}

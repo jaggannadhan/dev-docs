@@ -1,0 +1,46 @@
+{% extends '_default_layout.html' %}
+    {% block body %}
+        {% if session_exists %}
+            <link rel="stylesheet" href="/static/stylesheets/edit_contents_style.css?v=1.17">
+            {% include '/_navbar.html' %}
+            <div class="row">
+                <div class="col-lg-6 leftcol">
+                    <div id="markdowntextheader">
+                        <span><h3>Enter MarkDown</h3></span>
+                    </div>
+                    <textarea name="markdowntext" id="markdowntext">{{markdown}}</textarea>
+                    <button id="markdownpostbtn" class="btn btn-primary" style="float:left;"
+                            onclick="edit_markdown('{{url_for('redefine_functions', content_id=content_id, type= 'post')}}', 'post')">
+                        Post</button>
+                    <button id="markdownpreviewbtn" class="btn btn-primary" style="float:right;"
+                            onclick="edit_markdown('{{url_for('redefine_functions', content_id=content_id, type='preview')}}', 'preview')">
+                        Preview</button>
+                </div>
+                <div class="col-md-5 rightcol">
+                    <div id="markupdivheader">
+                        <span><h3>MarkDown Preview</h3></span><hr style="background: black;">
+                    </div>
+                    <div name="markupdiv" id="markupdiv">{{markup}}</div>
+                </div>
+            </div>
+
+        {% else %}
+            <style>
+                body{
+                    background-image: url('https://images2.alphacoders.com/708/thumb-1920-708647.jpg');
+                }
+                .session-expired{
+                    padding:40px;
+                    background: black;
+                    opacity: .5;
+                    color: white;
+                }
+            </style>
+                <div class = "session-expired container">
+                    <h3>Oops! Your session has expired! You have to log in</h3>
+                    <a href="{{ url_for('login') }}">Log-In again!</a>
+                </div>
+        {% endif %}
+        <script type="text/javascript" src="/static/scripts/edit_contents_script.js"></script>
+        <script type="text/javascript" src="/static/scripts/main_script.js"></script>
+    {% endblock %}

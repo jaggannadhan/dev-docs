@@ -1,0 +1,23 @@
+{% extends '_default_layout.html' %}
+    {% block body %}
+        <title>SyncMarkDown Login page</title>
+        <style>
+            body{
+                background-image:url('/static/images/loginwallpaper.jpg');
+            }
+            .form-signin{
+                padding: 20px;
+                background: white;
+                opacity: .8;
+            }
+            #newtofull{
+                padding: 20px 100px 0px 100px;
+            }
+            #google_signin{
+                width: 40%;
+                margin:0 30%;
+                color: white;
+            }
+        </style>
+        {% include '/_login_form.html' %}
+    {% endblock %}
