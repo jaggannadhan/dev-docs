@@ -1,7 +1,5 @@
-# dev-docs
-## Available Scripts
-
-In the project directory, you can run:
+# Dev-Docs
+## Dev-Docs is a web application designed to streamline the secure storage and sharing of APIs and API-related data within and across organizations at AnywhereWorks. It automates the process of securely storing and instantly sharing API endpoints using OAuth 2.0.
 
 ### `npm start`
 
